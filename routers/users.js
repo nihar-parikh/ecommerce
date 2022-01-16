@@ -42,7 +42,9 @@ router.post(
         });
         const token = jwt.sign({ _id: user._id }, SECRET_KEY);
         //return res.status(200).send(user);
-        return res.status(200).send({ _id: user._id, token: token });
+        const { password, ...otherInfo } = user._doc; //user._doc contains user info
+
+        return res.status(200).send({ otherInfo, token: token });
       } else {
         return res.status(400).send(errors);
       }

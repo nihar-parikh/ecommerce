@@ -10,6 +10,33 @@ const cartSchema = new Schema(
     },
     products: [
       {
+        title: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        description: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        image: {
+          type: String,
+          required: true,
+        },
+        categories: {
+          type: Array,
+        },
+        size: {
+          type: String,
+        },
+        color: {
+          type: String,
+        },
+        price: {
+          type: Number,
+          required: true,
+        },
         productId: {
           type: String,
         },
